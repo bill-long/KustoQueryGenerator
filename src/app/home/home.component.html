@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <form>
+        <div class="form-group">
+          <label for="scenarioSelect">Scenario</label>
+          <select class="form-control" id="scenarioSelect" [(ngModel)]="scenario" name="scenario">
+            <option>MSODS by Correlation/Tracking ID</option>
+            <option>EvoSTS Correlation</option>
+          </select>
+        </div>
+        <ngb-datepicker [(ngModel)]="date" name="date"></ngb-datepicker>
+        <ngb-timepicker [(ngModel)]="time" name="time"></ngb-timepicker>
+        <div class="form-group">
+          <label for="minutesInput">Minutes</label>
+          <input id="minutesInput" type="number" class="form-control" [(ngModel)]="minutes" name="minutes">
+        </div>
+        <div class="form-group">
+          <label for="correlationIdInput">Corellation ID</label>
+          <input id="correlationIdInput" type="text" class="form-control" [(ngModel)]="correlationId"
+            name="correlationId">
+        </div>
+        <button class="btn btn-primary" (click)="generate()">Generate</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <textarea *ngIf="output" [(ngModel)]="output"></textarea>
+    </div>
+  </div>
+</div>
